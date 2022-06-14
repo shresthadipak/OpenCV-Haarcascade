@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Celebrity Classifer</title>
+        <link href="{{ url_for('static',filename='css/bootstrap.css') }}"  type= "text/css" rel="stylesheet"/>
+        <link href="{{ url_for('static',filename='css/style.css') }}"  type= "text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row title_header">
+                <div class="title">
+                    <h2>Celebrity Classifer</h2>
+                </div>
+            </div>
+        </div>    
+        <div class="container celebs_container">
+            <div class="row celebs">
+                <div class="col-sm-2">
+                    <img src="{{ url_for('static', filename='images/amir khan.jpg') }}" width="100" class="rounded-circle"> 
+                    <h4>Amir Khan</h4>
+                </div>
+                <div class="col-sm-2">
+                    <img src="{{ url_for('static', filename='images/shah rukh khan.jpg') }}" width="100" class="rounded-circle"> 
+                    <h4>Shah Rukh Khan</h4>
+                </div>
+                <div class="col-sm-2">
+                    <img src="{{ url_for('static', filename='images/yash.jpg') }}" width="100" class="rounded-circle"> 
+                    <h4>Yash</h4>
+                </div>
+                <div class="col-sm-2">
+                    <img src="{{ url_for('static', filename='images/salman khan.jpg') }}" width="100" class="rounded-circle"> 
+                    <h4>Salman Khan</h4>
+                </div>
+                <div class="col-sm-2">
+                    <img src="{{ url_for('static', filename='images/prabhas.jpg') }}" width="100" class="rounded-circle"> 
+                    <h4>Prabhas</h4>
+                </div>
+            </div>
+        </div>
+        <div class="container image_drop">
+            <div class="row">
+               <div class="col-md-5">
+                  <form id="myform" method="post" enctype="multipart/form-data">
+                      <div class="form-group files color">
+                        <h5>Upload Celebrity Image </h5>
+                        <input type="file" class="form-control" id="image_file" name="img_file">
+                      </div>
+
+                      <div class="submit_button">
+                        <button type="submit" class="btn btn-primary mb-3" id="submitbtn">Classify</button>
+                      </div>
+                  </form>
+                  
+              </div>
+              <div class="col-md-3 img_cl" id="cel_res">
+                <h5>Identified Celebrity </h5>
+                <div id="classify_img"></div>
+                <h4 id="classify_cel" style="text-transform: capitalize;"></h4>
+              </div>
+              <div class="col-md-7" id="error_msg">
+                <h5 style="color: brown;">Warning Message !!!</h5>
+                <p>Sorry!! Can't classify image. Classifier was not able to detect face and two eyes properly</p>
+              </div>
+              <div class="col-md-4" id="cel_prob">
+                <h5>Probability Match</h5>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Celebrity Name</th>
+                        <th scope="col">Probability Match</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Amir Khan</td>
+                        <td id="amir"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Salman Khan</td>
+                        <td id="salman"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Prabhas</td>
+                        <td id="prabhas"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Yash</td>
+                        <td id="yash"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Shah Rukh Khan</td>
+                        <td id="shahrukh"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="{{ url_for('static',filename='js/app.js') }}" ></script>
+    </body>
+</html>

@@ -4,6 +4,7 @@ import base64
 from wavelet import w2d
 import joblib 
 import json
+import os
 
 __class_name_to_number = {}
 __class_number_to_name = {}
@@ -41,8 +42,8 @@ def get_cv2_image_from_base64_string(b64str):
     
 
 def get_cropped_images_if_2_eyes(image_path, image_base64_data):
-    face_cascade = cv2.CascadeClassifier('/media/darkdevil/2C3479B034797DA0/Data Science practice/celebrity_idetification/model/opencv/haarcascades/haarcascade_frontalface_default.xml')
-    eye_cascade = cv2.CascadeClassifier('/media/darkdevil/2C3479B034797DA0/Data Science practice/celebrity_idetification/model/opencv/haarcascades/haarcascade_eye.xml')
+    face_cascade = cv2.CascadeClassifier(os.path.abspath('model/opencv/haarcascades/haarcascade_frontalface_default.xml'))
+    eye_cascade = cv2.CascadeClassifier(os.path.abspath('model/opencv/haarcascades/haarcascade_eye.xml'))
 
     if image_path:
         img = cv2.imread(image_path)
@@ -65,7 +66,7 @@ def get_cropped_images_if_2_eyes(image_path, image_base64_data):
 
 
 def  get_b64_test_images_yash():
-    with open("/media/darkdevil/2C3479B034797DA0/Data Science practice/celebrity_idetification/server/b64.txt") as f:
+    with open("/server/b64.txt") as f:
         return f.read()
 
 def load_saved_artifacts():
@@ -74,12 +75,12 @@ def load_saved_artifacts():
     global __class_name_to_number
     global __class_number_to_name
 
-    with open("/media/darkdevil/2C3479B034797DA0/Data Science practice/celebrity_idetification/server/artifacts/class_dictionary.json", "r") as nf:
+    with open("server/artifacts/class_dictionary.json", "r") as nf:
         __class_name_to_number = json.load(nf)
         __class_number_to_name = {v:k for k, v in __class_name_to_number.items()}
    
     
-    with open("/media/darkdevil/2C3479B034797DA0/Data Science practice/celebrity_idetification/server/artifacts/saved_model.pkl", "rb") as f:
+    with open("server/artifacts/saved_model.pkl", "rb") as f:
         __model = joblib.load(f)
     print("Loading saved artifacts...done")
 
@@ -91,4 +92,4 @@ if __name__ == "__main__":
     # print(classify_image(get_b64_test_images_yash(), None))
 
     # print(class_number_to_name(2))
-    print(classify_image(None, "/media/darkdevil/2C3479B034797DA0/Data Science practice/celebrity_idetification/model/test_images/After Ram Charan-Yash_ Prabhas REACTS.jpg"))
+    # print(classify_image(None, "../model/test_images/After Ram Charan-Yash_ Prabhas REACTS.jpg"))

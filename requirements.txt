@@ -166,6 +166,8 @@ pathy==0.6.0
 pdfminer.six==20211012
 pexpect==4.6.0
 pickleshare==0.7.5
+pip==1.4
+setuptools==0.7.3
 Pillow==7.0.0
 plotly==5.5.0
 pluggy==0.13.1

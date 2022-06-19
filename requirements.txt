@@ -166,8 +166,6 @@ pathy==0.6.0
 pdfminer.six==20211012
 pexpect==4.6.0
 pickleshare==0.7.5
-pip==1.4
-setuptools==0.7.3
 Pillow==7.0.0
 plotly==5.5.0
 pluggy==0.13.1
@@ -189,7 +187,7 @@ pydot==1.4.2
 pyflakes==2.2.0
 Pygments==2.8.1
 PyGObject==3.36.0
-PyJWT==2.4.0
+PyJWT==1.7.1
 pylev==1.4.0
 pylint==2.7.2
 pyls-black==0.4.6

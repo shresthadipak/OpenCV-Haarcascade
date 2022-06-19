@@ -39,7 +39,6 @@ cymem==2.0.5
 Cython==0.29.26
 dbus-python==1.2.16
 decorator==4.4.2
-defer==1.0.6
 defusedxml==0.7.1
 Deprecated==1.2.12
 diff-match-patch==20200713

@@ -28,7 +28,6 @@ clikit==0.6.2
 cloudpickle==1.6.0
 cmdstanpy==0.4.0
 colorama==0.4.3
-command-not-found==0.3
 configobj==5.0.6
 configparser==5.2.0
 conllu==4.4.1

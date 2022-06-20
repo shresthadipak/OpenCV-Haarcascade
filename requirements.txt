@@ -283,6 +283,5 @@ Wikipedia-API==0.5.4
 wrapt==1.12.1
 WTForms==3.0.1
 wurlitzer==2.0.1
-xkit==0.0.0
 yapf==0.31.0
 yarl==1.7.2
